@@ -1,4 +1,4 @@
-import { View, Image, Text, TextInput, Pressable, KeyboardAvoidingView, ScrollView, Platform, StyleSheet, TouchableWithoutFeedback, Keyboard} from "react-native";
+import { View, Image, Text, TextInput, Pressable, KeyboardAvoidingView, ScrollView, Platform, StyleSheet} from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useState } from "react";
 import GmailIcon from '@expo/vector-icons/MaterialCommunityIcons';
@@ -6,7 +6,7 @@ import Feather from '@expo/vector-icons/Feather';
 import Facebook from '@expo/vector-icons/Entypo';
 
 
-export default function InicioSesion(navigate){
+export default function InicioSesion({navigation}){
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [verPassword, setVerPassword] = useState(true)
@@ -71,7 +71,7 @@ export default function InicioSesion(navigate){
                     </View>
                     <View style={styles.olvidado}>
                         <Text>¿No tienes una cuenta?</Text>
-                        <Pressable>
+                        <Pressable onPress={() => navigation.navigate('RegistrarseP1')}>
                             <Text style={{color: '#0076CB', textDecorationLine: 'underline', paddingStart: 5}}>Registrate</Text>
                         </Pressable>
                     </View>
